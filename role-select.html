@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Role Selection | Building Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#f0f7ff",
+              100: "#dceeff",
+              200: "#b9ddff",
+              300: "#84c5ff",
+              400: "#4aa5ff",
+              500: "#1d84ff",
+              600: "#0d68db",
+              700: "#0f53ae",
+              800: "#124889",
+              900: "#163d70"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+  <div class="min-h-screen">
+    <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+      <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8 lg:px-12 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="h-11 w-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-soft">
+            B
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Prototype</p>
+            <h1 class="text-lg font-semibold text-slate-900">Building Management System</h1>
+          </div>
+        </div>
+
+        <a
+          href="login.html"
+          class="inline-flex items-center rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+        >
+          Back to Login
+        </a>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-6 py-10 sm:px-8 lg:px-12">
+      <div class="max-w-3xl mb-10">
+        <p class="text-sm font-medium text-brand-700 mb-2">Choose a view</p>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
+          Role Selection / Demo Landing
+        </h2>
+        <p class="mt-3 text-slate-600 leading-7">
+          Select a role below to enter the relevant dashboard experience. Each role has a different
+          view of operations, residents, requests, and building activity.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        
+        <!-- Admin -->
+        <div class="rounded-3xl border border-slate-200 bg-white shadow-soft p-6 flex flex-col">
+          <div class="mb-5">
+            <div class="h-12 w-12 rounded-2xl bg-brand-50 text-brand-700 flex items-center justify-center font-bold text-lg mb-4">
+              A
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900">Admin</h3>
+            <p class="text-sm text-slate-500 mt-1">System-wide control</p>
+          </div>
+
+          <p class="text-sm text-slate-600 leading-6 flex-1">
+            Sees the full platform view including all buildings, users, finances, maintenance,
+            access controls, reports, and high-level system settings.
+          </p>
+
+          <div class="mt-6">
+            <a
+              href="admin-dashboard.html"
+              class="inline-flex w-full items-center justify-center rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-700"
+            >
+              Enter Dashboard
+            </a>
+          </div>
+        </div>
+
+        <!-- Manager -->
+        <div class="rounded-3xl border border-slate-200 bg-white shadow-soft p-6 flex flex-col">
+          <div class="mb-5">
+            <div class="h-12 w-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-lg mb-4">
+              M
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900">Manager</h3>
+            <p class="text-sm text-slate-500 mt-1">Property operations view</p>
+          </div>
+
+          <p class="text-sm text-slate-600 leading-6 flex-1">
+            Sees building performance, occupancy, tenant issues, staff coordination, vendor tasks,
+            maintenance schedules, and day-to-day operational updates.
+          </p>
+
+          <div class="mt-6">
+            <a
+              href="manager-dashboard.html"
+              class="inline-flex w-full items-center justify-center rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-700"
+            >
+              Enter Dashboard
+            </a>
+          </div>
+        </div>
+
+        <!-- Staff -->
+        <div class="rounded-3xl border border-slate-200 bg-white shadow-soft p-6 flex flex-col">
+          <div class="mb-5">
+            <div class="h-12 w-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center font-bold text-lg mb-4">
+              S
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900">Staff</h3>
+            <p class="text-sm text-slate-500 mt-1">Task execution view</p>
+          </div>
+
+          <p class="text-sm text-slate-600 leading-6 flex-1">
+            Sees assigned maintenance tasks, visitor logs, service schedules, checklists,
+            notifications, and updates needed to support daily building operations.
+          </p>
+
+          <div class="mt-6">
+            <a
+              href="staff-dashboard.html"
+              class="inline-flex w-full items-center justify-center rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-700"
+            >
+              Enter Dashboard
+            </a>
+          </div>
+        </div>
+
+        <!-- Tenant -->
+        <div class="rounded-3xl border border-slate-200 bg-white shadow-soft p-6 flex flex-col">
+          <div class="mb-5">
+            <div class="h-12 w-12 rounded-2xl bg-violet-50 text-violet-700 flex items-center justify-center font-bold text-lg mb-4">
+              T
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900">Tenant</h3>
+            <p class="text-sm text-slate-500 mt-1">Resident self-service view</p>
+          </div>
+
+          <p class="text-sm text-slate-600 leading-6 flex-1">
+            Sees rent and billing details, maintenance requests, visitor approvals, notices,
+            amenities, support options, and apartment-related updates.
+          </p>
+
+          <div class="mt-6">
+            <a
+              href="tenant-dashboard.html"
+              class="inline-flex w-full items-center justify-center rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-700"
+            >
+              Enter Dashboard
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+        <h3 class="text-lg font-semibold text-slate-900">Prototype Note</h3>
+        <p class="mt-2 text-sm text-slate-600 leading-6">
+          Since this is a clickable HTML-only prototype, each role button can lead to its own
+          dedicated dashboard file such as
+          <span class="font-medium text-slate-800">admin-dashboard.html</span>,
+          <span class="font-medium text-slate-800">manager-dashboard.html</span>,
+          <span class="font-medium text-slate-800">staff-dashboard.html</span>, and
+          <span class="font-medium text-slate-800">tenant-dashboard.html</span>.
+        </p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
