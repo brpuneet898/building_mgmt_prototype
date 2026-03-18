@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Building Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#f0f7ff",
+              100: "#dceeff",
+              200: "#b9ddff",
+              300: "#84c5ff",
+              400: "#4aa5ff",
+              500: "#1d84ff",
+              600: "#0d68db",
+              700: "#0f53ae",
+              800: "#124889",
+              900: "#163d70"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+  <div class="min-h-screen grid lg:grid-cols-2">
+    
+    <!-- Left Brand / Info Panel -->
+    <div class="hidden lg:flex flex-col justify-between bg-gradient-to-br from-brand-900 via-brand-800 to-slate-900 text-white p-12">
+      <div>
+        <div class="flex items-center gap-3 mb-10">
+          <div class="h-11 w-11 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center text-xl font-bold border border-white/20">
+            B
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-white/70">Prototype</p>
+            <h1 class="text-2xl font-semibold">Building Management System</h1>
+          </div>
+        </div>
+
+        <div class="max-w-md">
+          <p class="text-sm uppercase tracking-[0.25em] text-brand-200 mb-4">Smart Operations</p>
+          <h2 class="text-4xl font-semibold leading-tight mb-5">
+            Manage buildings, tenants, billing, and maintenance from one place.
+          </h2>
+          <p class="text-white/75 leading-7">
+            This clickable prototype is designed as a simple and elegant reference point for the
+            future full product experience.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 max-w-lg">
+        <div class="rounded-2xl border border-white/10 bg-white/10 backdrop-blur p-5">
+          <p class="text-2xl font-semibold">12</p>
+          <p class="text-sm text-white/70 mt-1">Active Properties</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/10 backdrop-blur p-5">
+          <p class="text-2xl font-semibold">248</p>
+          <p class="text-sm text-white/70 mt-1">Occupied Units</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/10 backdrop-blur p-5">
+          <p class="text-2xl font-semibold">34</p>
+          <p class="text-sm text-white/70 mt-1">Open Tickets</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/10 backdrop-blur p-5">
+          <p class="text-2xl font-semibold">18</p>
+          <p class="text-sm text-white/70 mt-1">Today’s Visitors</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Login Panel -->
+    <div class="flex items-center justify-center px-6 py-10 sm:px-8 lg:px-12">
+      <div class="w-full max-w-md">
+        
+        <!-- Mobile Brand -->
+        <div class="lg:hidden flex items-center gap-3 mb-8">
+          <div class="h-11 w-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-soft">
+            B
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Prototype</p>
+            <h1 class="text-xl font-semibold text-slate-900">Building Management System</h1>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-3xl shadow-soft p-8 sm:p-10">
+          <div class="mb-8">
+            <p class="text-sm font-medium text-brand-700 mb-2">Welcome back</p>
+            <h2 class="text-3xl font-semibold text-slate-900">Login</h2>
+            <p class="text-sm text-slate-500 mt-2">
+              Access your building operations dashboard.
+            </p>
+          </div>
+
+          <form action="role-select.html" method="get" class="space-y-5">
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-700 mb-2">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter your email"
+                class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-100"
+              />
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label for="password" class="block text-sm font-medium text-slate-700">
+                  Password
+                </label>
+                <a href="#" class="text-sm font-medium text-brand-700 hover:text-brand-800">
+                  Forgot password?
+                </a>
+              </div>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Enter your password"
+                class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-100"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 focus:outline-none focus:ring-4 focus:ring-brand-200"
+            >
+              Login
+            </button>
+          </form>
+
+          <div class="relative my-6">
+            <div class="absolute inset-0 flex items-center">
+              <div class="w-full border-t border-slate-200"></div>
+            </div>
+            <div class="relative flex justify-center text-xs uppercase tracking-[0.2em]">
+              <span class="bg-white px-3 text-slate-400">or</span>
+            </div>
+          </div>
+
+          <a
+            href="role-select.html"
+            class="flex items-center justify-center w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
+          >
+            Continue as Demo
+          </a>
+
+          <div class="mt-8 rounded-2xl bg-slate-50 border border-slate-200 p-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-2">
+              Demo Note
+            </p>
+            <p class="text-sm text-slate-600 leading-6">
+              Since this is an HTML-only prototype, both the Login and Continue as Demo actions can
+              move to the next page such as <span class="font-medium text-slate-800">role-select.html</span>.
+            </p>
+          </div>
+        </div>
+
+        <p class="text-center text-xs text-slate-400 mt-6">
+          © 2026 Building Management System Prototype
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
