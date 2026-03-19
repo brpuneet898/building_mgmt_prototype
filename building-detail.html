@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building Detail | Building Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#f0f7ff",
+              100: "#dceeff",
+              200: "#b9ddff",
+              300: "#84c5ff",
+              400: "#4aa5ff",
+              500: "#1d84ff",
+              600: "#0d68db",
+              700: "#0f53ae",
+              800: "#124889",
+              900: "#163d70"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+  <div class="min-h-screen lg:flex">
+    <!-- Sidebar -->
+    <aside class="hidden lg:flex lg:w-72 xl:w-80 flex-col border-r border-slate-200 bg-slate-950 text-slate-100">
+      <div class="px-6 py-6 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="h-11 w-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-soft">
+            B
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Prototype</p>
+            <h1 class="text-lg font-semibold">Building Management</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-6 py-5 border-b border-white/10">
+        <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Signed in as</p>
+        <div class="mt-3 rounded-2xl bg-white/5 p-4 border border-white/10">
+          <p class="font-semibold text-white">Aarav Mehta</p>
+          <p class="text-sm text-slate-400">Admin</p>
+        </div>
+      </div>
+
+      <nav class="flex-1 px-4 py-6 space-y-1 text-sm">
+        <a href="dashboard-admin.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Dashboard</a>
+        <a href="buildings.html" class="flex items-center justify-between rounded-2xl bg-brand-600/20 px-4 py-3 text-white border border-brand-500/30">
+          <span>Buildings / Properties</span>
+          <span class="text-xs text-brand-200">Active</span>
+        </a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Units</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Tenants</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Leases</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Maintenance</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Billing & Payments</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Visitors</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Facility Booking</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Communication</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Documents</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Reports</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Users & Roles</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Settings</a>
+      </nav>
+
+      <div class="p-4 border-t border-white/10">
+        <a href="role-select.html" class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 hover:bg-white/10">
+          Switch Role
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="flex-1 min-w-0">
+      <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8 xl:px-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="text-sm text-slate-500">Home / Buildings / Skyline Tower</p>
+            <h2 class="text-2xl font-semibold text-slate-900 mt-1">Building Detail</h2>
+          </div>
+
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href="buildings.html"
+              class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
+            >
+              Back to Buildings
+            </a>
+            <a
+              href="building-form.html"
+              class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700"
+            >
+              Edit Building
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-7xl px-6 py-8 sm:px-8 xl:px-10 space-y-8">
+        <!-- Building overview card -->
+        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
+          <div class="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3">
+                <h3 class="text-2xl font-semibold text-slate-900">Skyline Tower</h3>
+                <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">Active</span>
+              </div>
+              <p class="mt-3 text-sm text-slate-500">12 Marina View Road, Chennai</p>
+              <p class="mt-4 max-w-3xl text-sm leading-6 text-slate-600">
+                Premium residential tower with modern amenities, multi-level parking, dedicated facility staff,
+                and a strong occupancy trend. The building includes studio, 1BHK, 2BHK, and 3BHK units.
+              </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2 xl:w-[420px]">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Floors</p>
+                <p class="mt-2 text-2xl font-semibold text-slate-900">18</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Total Units</p>
+                <p class="mt-2 text-2xl font-semibold text-slate-900">96</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Occupancy Rate</p>
+                <p class="mt-2 text-2xl font-semibold text-slate-900">92%</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Manager Assigned</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">Neha Sharma</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tabs -->
+        <section class="rounded-3xl border border-slate-200 bg-white p-3 shadow-soft">
+          <div class="flex flex-wrap gap-3">
+            <a href="building-detail.html" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white">Overview</a>
+            <a href="#" class="rounded-2xl px-5 py-3 text-sm font-medium text-slate-600 hover:bg-slate-100">Floors</a>
+            <a href="#" class="rounded-2xl px-5 py-3 text-sm font-medium text-slate-600 hover:bg-slate-100">Units</a>
+            <a href="#" class="rounded-2xl px-5 py-3 text-sm font-medium text-slate-600 hover:bg-slate-100">Tenants</a>
+            <a href="#" class="rounded-2xl px-5 py-3 text-sm font-medium text-slate-600 hover:bg-slate-100">Maintenance</a>
+            <a href="#" class="rounded-2xl px-5 py-3 text-sm font-medium text-slate-600 hover:bg-slate-100">Financial Summary</a>
+            <a href="#" class="rounded-2xl px-5 py-3 text-sm font-medium text-slate-600 hover:bg-slate-100">Documents</a>
+          </div>
+        </section>
+
+        <!-- Occupancy + unit type -->
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="xl:col-span-2 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900">Occupancy Summary</h3>
+                <p class="text-sm text-slate-500 mt-1">Current status across total residential inventory</p>
+              </div>
+              <span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">Updated today</span>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-3 mb-6">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Occupied Units</p>
+                <p class="mt-2 text-2xl font-semibold text-slate-900">88</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Vacant Units</p>
+                <p class="mt-2 text-2xl font-semibold text-slate-900">8</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Lease Renewals</p>
+                <p class="mt-2 text-2xl font-semibold text-slate-900">11</p>
+              </div>
+            </div>
+
+            <div class="space-y-5">
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm">
+                  <span class="font-medium text-slate-700">Overall Occupancy</span>
+                  <span class="text-slate-500">92%</span>
+                </div>
+                <div class="h-3 overflow-hidden rounded-full bg-slate-100">
+                  <div class="h-full w-[92%] rounded-full bg-brand-600"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm">
+                  <span class="font-medium text-slate-700">Owner Occupied</span>
+                  <span class="text-slate-500">28%</span>
+                </div>
+                <div class="h-3 overflow-hidden rounded-full bg-slate-100">
+                  <div class="h-full w-[28%] rounded-full bg-emerald-500"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm">
+                  <span class="font-medium text-slate-700">Rented Units</span>
+                  <span class="text-slate-500">64%</span>
+                </div>
+                <div class="h-3 overflow-hidden rounded-full bg-slate-100">
+                  <div class="h-full w-[64%] rounded-full bg-violet-500"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900">Building Snapshot</h3>
+                <p class="text-sm text-slate-500 mt-1">Quick operational overview</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Security</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">24/7 Active</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Parking Capacity</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">110 Slots</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Last Inspection</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">12 March 2026</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Amenities</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">Gym, Pool, Power Backup</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Unit count by type + recent incidents -->
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="xl:col-span-2 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900">Unit Count by Type</h3>
+                <p class="text-sm text-slate-500 mt-1">Distribution of inventory across unit categories</p>
+              </div>
+            </div>
+
+            <div class="space-y-5">
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm">
+                  <span class="font-medium text-slate-700">Studio</span>
+                  <span class="text-slate-500">12 units</span>
+                </div>
+                <div class="h-3 overflow-hidden rounded-full bg-slate-100">
+                  <div class="h-full w-[12%] rounded-full bg-brand-400"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm">
+                  <span class="font-medium text-slate-700">1 BHK</span>
+                  <span class="text-slate-500">24 units</span>
+                </div>
+                <div class="h-3 overflow-hidden rounded-full bg-slate-100">
+                  <div class="h-full w-[25%] rounded-full bg-brand-500"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm">
+                  <span class="font-medium text-slate-700">2 BHK</span>
+                  <span class="text-slate-500">42 units</span>
+                </div>
+                <div class="h-3 overflow-hidden rounded-full bg-slate-100">
+                  <div class="h-full w-[44%] rounded-full bg-brand-600"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm">
+                  <span class="font-medium text-slate-700">3 BHK</span>
+                  <span class="text-slate-500">18 units</span>
+                </div>
+                <div class="h-3 overflow-hidden rounded-full bg-slate-100">
+                  <div class="h-full w-[19%] rounded-full bg-violet-500"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Occupied Studios</p>
+                <p class="mt-2 text-xl font-semibold text-slate-900">10</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Occupied 1 BHK</p>
+                <p class="mt-2 text-xl font-semibold text-slate-900">22</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Occupied 2 BHK</p>
+                <p class="mt-2 text-xl font-semibold text-slate-900">40</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Occupied 3 BHK</p>
+                <p class="mt-2 text-xl font-semibold text-slate-900">16</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900">Recent Incidents / Updates</h3>
+                <p class="text-sm text-slate-500 mt-1">Latest noteworthy activity in the property</p>
+              </div>
+            </div>
+
+            <div class="space-y-4 text-sm">
+              <div class="border-l-2 border-rose-500 pl-4">
+                <p class="font-medium text-slate-800">Water leakage reported on Floor 12</p>
+                <p class="text-slate-500 mt-1">Maintenance team assigned • 20 min ago</p>
+              </div>
+
+              <div class="border-l-2 border-amber-500 pl-4">
+                <p class="font-medium text-slate-800">Elevator B scheduled for inspection</p>
+                <p class="text-slate-500 mt-1">Vendor visit tomorrow • High priority</p>
+              </div>
+
+              <div class="border-l-2 border-emerald-500 pl-4">
+                <p class="font-medium text-slate-800">Move-in completed for Unit 8C</p>
+                <p class="text-slate-500 mt-1">Documents verified • Today</p>
+              </div>
+
+              <div class="border-l-2 border-violet-500 pl-4">
+                <p class="font-medium text-slate-800">Community hall repainting approved</p>
+                <p class="text-slate-500 mt-1">Work starts Friday morning</p>
+              </div>
+
+              <div class="border-l-2 border-brand-500 pl-4">
+                <p class="font-medium text-slate-800">Monthly fire safety checklist completed</p>
+                <p class="text-slate-500 mt-1">Reviewed by property manager</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Placeholder content blocks for tabs -->
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-lg font-semibold text-slate-900">Floors</h3>
+            <p class="mt-2 text-sm text-slate-500">Later this tab can show floor-wise occupancy and floor directory.</p>
+            <div class="mt-4 space-y-3">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">Floor 18 - Penthouse / Terrace Access</div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">Floor 17 to 2 - Residential Units</div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">Floor 1 - Lobby / Amenities / Office</div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-lg font-semibold text-slate-900">Maintenance</h3>
+            <p class="mt-2 text-sm text-slate-500">This section can expand into tickets, vendors, SLAs, and work logs.</p>
+            <div class="mt-4 grid gap-3">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Open Tickets</p>
+                <p class="mt-2 text-2xl font-semibold text-slate-900">9</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">In Progress</p>
+                <p class="mt-2 text-2xl font-semibold text-slate-900">5</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-lg font-semibold text-slate-900">Financial Summary</h3>
+            <p class="mt-2 text-sm text-slate-500">Later this can connect rent collection, dues, deposits, and expense trends.</p>
+            <div class="mt-4 space-y-3">
+              <div class="rounded-2xl border border-emerald-100 bg-emerald-50 p-4">
+                <p class="text-sm text-emerald-700">Collected This Month</p>
+                <p class="mt-2 text-2xl font-semibold text-emerald-900">₹4.6L</p>
+              </div>
+              <div class="rounded-2xl border border-amber-100 bg-amber-50 p-4">
+                <p class="text-sm text-amber-700">Pending Dues</p>
+                <p class="mt-2 text-2xl font-semibold text-amber-900">₹58K</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
