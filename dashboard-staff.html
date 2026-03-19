@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff Dashboard | Building Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#f0f7ff",
+              100: "#dceeff",
+              200: "#b9ddff",
+              300: "#84c5ff",
+              400: "#4aa5ff",
+              500: "#1d84ff",
+              600: "#0d68db",
+              700: "#0f53ae",
+              800: "#124889",
+              900: "#163d70"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+  <div class="min-h-screen lg:flex">
+    <aside class="hidden lg:flex lg:w-72 xl:w-80 flex-col border-r border-slate-200 bg-slate-950 text-slate-100">
+      <div class="px-6 py-6 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="h-11 w-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-soft">B</div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Prototype</p>
+            <h1 class="text-lg font-semibold">Building Management</h1>
+          </div>
+        </div>
+      </div>
+      <div class="px-6 py-5 border-b border-white/10">
+        <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Signed in as</p>
+        <div class="mt-3 rounded-2xl bg-white/5 p-4 border border-white/10">
+          <p class="font-semibold text-white">Rahul Singh</p>
+          <p class="text-sm text-slate-400">Operations Staff</p>
+        </div>
+      </div>
+      <nav class="flex-1 px-4 py-6 space-y-1 text-sm">
+        <a href="dashboard-staff.html" class="flex items-center justify-between rounded-2xl bg-brand-600/20 px-4 py-3 text-white border border-brand-500/30"><span>Dashboard</span><span class="text-xs text-brand-200">Active</span></a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Assigned Tickets</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Visitor Desk</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Task List</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Check-in Records</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Announcements</a>
+      </nav>
+      <div class="p-4 border-t border-white/10"><a href="role-select.html" class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 hover:bg-white/10">Switch Role</a></div>
+    </aside>
+
+    <div class="flex-1 min-w-0">
+      <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8 xl:px-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="text-sm text-slate-500">Home / Dashboard / Staff</p>
+            <h2 class="text-2xl font-semibold text-slate-900 mt-1">Main Dashboard</h2>
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <input type="text" placeholder="Search ticket ID, visitor, unit..." class="w-full sm:w-80 rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+            <a href="#" class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700">Start Shift Actions</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-7xl px-6 py-8 sm:px-8 xl:px-10 space-y-8">
+        <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6">
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Total Buildings</p><p class="mt-3 text-3xl font-semibold">3</p><p class="mt-2 text-xs text-slate-500">Operational coverage</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Total Occupied Units</p><p class="mt-3 text-3xl font-semibold">248</p><p class="mt-2 text-xs text-slate-500">For service routing</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Active Tenants</p><p class="mt-3 text-3xl font-semibold">226</p><p class="mt-2 text-xs text-slate-500">Resident support base</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Open Maintenance Tickets</p><p class="mt-3 text-3xl font-semibold">9</p><p class="mt-2 text-xs text-amber-600">Assigned to your team</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Pending Payments</p><p class="mt-3 text-3xl font-semibold">12</p><p class="mt-2 text-xs text-slate-500">Front desk reminders</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Today's Visitors</p><p class="mt-3 text-3xl font-semibold">18</p><p class="mt-2 text-xs text-slate-500">11 already checked in</p></div>
+        </section>
+
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="xl:col-span-2 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6"><div><h3 class="text-lg font-semibold text-slate-900">Occupancy Summary</h3><p class="text-sm text-slate-500 mt-1">Useful for navigating service requests</p></div><span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Reference</span></div>
+            <div class="grid gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-sm text-slate-500">Occupied</p><p class="mt-2 text-2xl font-semibold">248</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-sm text-slate-500">Vacant</p><p class="mt-2 text-2xl font-semibold">17</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-sm text-slate-500">Maintenance Hold</p><p class="mt-2 text-2xl font-semibold">4</p></div>
+            </div>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6"><div><h3 class="text-lg font-semibold text-slate-900">Payment Collection</h3><p class="text-sm text-slate-500 mt-1">Front desk reminders</p></div><span class="text-sm font-semibold text-brand-700">12 due</span></div>
+            <div class="space-y-4 text-sm">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-slate-500">Receipts to verify</p><p class="mt-2 text-2xl font-semibold">6</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-slate-500">Pending walk-ins</p><p class="mt-2 text-2xl font-semibold">3</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-slate-500">Deposit queries</p><p class="mt-2 text-2xl font-semibold">2</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6"><div><h3 class="text-lg font-semibold text-slate-900">Maintenance Status</h3><p class="text-sm text-slate-500 mt-1">Your active work queue</p></div><a href="#" class="text-sm font-medium text-brand-700">Open tasks</a></div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3 border border-slate-200"><span class="text-sm font-medium">Open</span><span class="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700">4</span></div>
+              <div class="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3 border border-slate-200"><span class="text-sm font-medium">In Progress</span><span class="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">3</span></div>
+              <div class="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3 border border-slate-200"><span class="text-sm font-medium">Resolved</span><span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">7</span></div>
+              <div class="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3 border border-slate-200"><span class="text-sm font-medium">Overdue</span><span class="rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold text-violet-700">1</span></div>
+            </div>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6"><div><h3 class="text-lg font-semibold text-slate-900">Recent Activities</h3><p class="text-sm text-slate-500 mt-1">Latest tasks and desk updates</p></div></div>
+            <div class="space-y-4 text-sm">
+              <div class="border-l-2 border-brand-500 pl-4"><p class="font-medium">Ticket #MT-204 started</p><p class="text-slate-500 mt-1">Unit A-203 • 8 min ago</p></div>
+              <div class="border-l-2 border-emerald-500 pl-4"><p class="font-medium">Visitor check-in completed</p><p class="text-slate-500 mt-1">Guest for M-110 • 25 min ago</p></div>
+              <div class="border-l-2 border-amber-500 pl-4"><p class="font-medium">Lift inspection checklist submitted</p><p class="text-slate-500 mt-1">Skyline Tower • 1 hr ago</p></div>
+              <div class="border-l-2 border-violet-500 pl-4"><p class="font-medium">Package room handover recorded</p><p class="text-slate-500 mt-1">Front desk • Today</p></div>
+            </div>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6"><div><h3 class="text-lg font-semibold text-slate-900">Staff Focus</h3><p class="text-sm text-slate-500 mt-1">Role-specific widgets</p></div></div>
+            <div class="space-y-4">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-sm text-slate-500">Assigned Tickets</p><p class="mt-2 text-2xl font-semibold">9</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-sm text-slate-500">Check-ins Completed</p><p class="mt-2 text-2xl font-semibold">11</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-sm text-slate-500">Shift Checklist</p><p class="mt-2 text-2xl font-semibold">78%</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-5"><h3 class="text-lg font-semibold text-slate-900">Upcoming Bookings</h3><a href="#" class="text-sm font-medium text-brand-700">Prep</a></div>
+            <div class="space-y-4 text-sm">
+              <div class="rounded-2xl border border-slate-200 p-4"><p class="font-medium">Clubhouse setup • 5:30 PM</p><p class="text-slate-500 mt-1">Sound system and seating check</p></div>
+              <div class="rounded-2xl border border-slate-200 p-4"><p class="font-medium">Meeting Room unlock • Tomorrow</p><p class="text-slate-500 mt-1">Association booking</p></div>
+              <div class="rounded-2xl border border-slate-200 p-4"><p class="font-medium">Gym maintenance block • Saturday</p><p class="text-slate-500 mt-1">Temporary closure</p></div>
+            </div>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-5"><h3 class="text-lg font-semibold text-slate-900">Latest Announcements</h3><a href="#" class="text-sm font-medium text-brand-700">Read all</a></div>
+            <div class="space-y-4 text-sm">
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4"><p class="font-medium">Night shift gate roster updated</p><p class="text-slate-500 mt-1">Security staff only</p></div>
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4"><p class="font-medium">Tool room inventory check</p><p class="text-slate-500 mt-1">Maintenance team • Today</p></div>
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4"><p class="font-medium">Visitor desk SOP reminder</p><p class="text-slate-500 mt-1">All operational staff</p></div>
+            </div>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-5"><h3 class="text-lg font-semibold text-slate-900">Quick Actions</h3><span class="text-sm text-slate-500">Operational shortcuts</span></div>
+            <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
+              <a href="#" class="rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white hover:bg-brand-700 text-center">Add Tenant</a>
+              <a href="#" class="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 text-center">Raise Ticket</a>
+              <a href="#" class="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 text-center">Record Payment</a>
+              <a href="#" class="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 text-center">Register Visitor</a>
+              <a href="#" class="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 text-center">Book Facility</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
