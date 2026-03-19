@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manager Dashboard | Building Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#f0f7ff",
+              100: "#dceeff",
+              200: "#b9ddff",
+              300: "#84c5ff",
+              400: "#4aa5ff",
+              500: "#1d84ff",
+              600: "#0d68db",
+              700: "#0f53ae",
+              800: "#124889",
+              900: "#163d70"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+  <div class="min-h-screen lg:flex">
+    <aside class="hidden lg:flex lg:w-72 xl:w-80 flex-col border-r border-slate-200 bg-slate-950 text-slate-100">
+      <div class="px-6 py-6 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="h-11 w-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-soft">B</div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Prototype</p>
+            <h1 class="text-lg font-semibold">Building Management</h1>
+          </div>
+        </div>
+      </div>
+      <div class="px-6 py-5 border-b border-white/10">
+        <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Signed in as</p>
+        <div class="mt-3 rounded-2xl bg-white/5 p-4 border border-white/10">
+          <p class="font-semibold text-white">Neha Sharma</p>
+          <p class="text-sm text-slate-400">Building Manager</p>
+        </div>
+      </div>
+      <nav class="flex-1 px-4 py-6 space-y-1 text-sm">
+        <a href="dashboard-manager.html" class="flex items-center justify-between rounded-2xl bg-brand-600/20 px-4 py-3 text-white border border-brand-500/30"><span>Dashboard</span><span class="text-xs text-brand-200">Active</span></a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Buildings / Properties</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Units</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Tenants</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Maintenance</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Billing & Payments</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Visitors</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Facility Booking</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Communication</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Reports</a>
+      </nav>
+      <div class="p-4 border-t border-white/10"><a href="role-select.html" class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 hover:bg-white/10">Switch Role</a></div>
+    </aside>
+
+    <div class="flex-1 min-w-0">
+      <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8 xl:px-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="text-sm text-slate-500">Home / Dashboard / Manager</p>
+            <h2 class="text-2xl font-semibold text-slate-900 mt-1">Main Dashboard</h2>
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <input type="text" placeholder="Search units, tickets, bookings..." class="w-full sm:w-80 rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+            <select class="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-100">
+              <option>Skyline Tower</option>
+              <option>Maple Residency</option>
+              <option>Riverfront Suites</option>
+            </select>
+            <a href="#" class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700">Manager Actions</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-7xl px-6 py-8 sm:px-8 xl:px-10 space-y-8">
+        <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6">
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Total Buildings</p><p class="mt-3 text-3xl font-semibold">3</p><p class="mt-2 text-xs text-slate-500">Assigned oversight</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Total Occupied Units</p><p class="mt-3 text-3xl font-semibold">248</p><p class="mt-2 text-xs text-slate-500">Across active properties</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Active Tenants</p><p class="mt-3 text-3xl font-semibold">226</p><p class="mt-2 text-xs text-slate-500">5 move-ins scheduled</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Open Maintenance Tickets</p><p class="mt-3 text-3xl font-semibold">21</p><p class="mt-2 text-xs text-amber-600">4 overdue today</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Pending Payments</p><p class="mt-3 text-3xl font-semibold">₹1.92L</p><p class="mt-2 text-xs text-slate-500">Follow-up this week</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Today's Visitors</p><p class="mt-3 text-3xl font-semibold">14</p><p class="mt-2 text-xs text-slate-500">3 pending approval</p></div>
+        </section>
+
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="xl:col-span-2 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6">
+              <div><h3 class="text-lg font-semibold text-slate-900">Occupancy Summary</h3><p class="text-sm text-slate-500 mt-1">Portfolio occupancy performance</p></div>
+              <span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">Stable</span>
+            </div>
+            <div class="grid gap-4 md:grid-cols-3">
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4"><p class="text-sm text-slate-500">Skyline Tower</p><p class="mt-2 text-2xl font-semibold">92%</p><p class="text-xs text-slate-500 mt-2">Vacant units: 6</p></div>
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4"><p class="text-sm text-slate-500">Maple Residency</p><p class="mt-2 text-2xl font-semibold">88%</p><p class="text-xs text-slate-500 mt-2">Vacant units: 8</p></div>
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4"><p class="text-sm text-slate-500">Riverfront Suites</p><p class="mt-2 text-2xl font-semibold">95%</p><p class="text-xs text-slate-500 mt-2">Vacant units: 3</p></div>
+            </div>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6"><div><h3 class="text-lg font-semibold text-slate-900">Payment Collection</h3><p class="text-sm text-slate-500 mt-1">Operational collection summary</p></div><span class="text-sm font-semibold text-brand-700">84%</span></div>
+            <div class="space-y-4">
+              <div class="rounded-2xl bg-slate-50 p-4 border border-slate-200"><p class="text-sm text-slate-500">Expected</p><p class="mt-2 text-2xl font-semibold">₹6.4L</p></div>
+              <div class="rounded-2xl bg-emerald-50 p-4 border border-emerald-100"><p class="text-sm text-emerald-700">Collected</p><p class="mt-2 text-2xl font-semibold text-emerald-900">₹5.4L</p></div>
+              <div class="rounded-2xl bg-amber-50 p-4 border border-amber-100"><p class="text-sm text-amber-700">Pending Follow-up</p><p class="mt-2 text-2xl font-semibold text-amber-900">₹1.0L</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6"><div><h3 class="text-lg font-semibold text-slate-900">Maintenance Status</h3><p class="text-sm text-slate-500 mt-1">Service ticket pipeline</p></div><a href="#" class="text-sm font-medium text-brand-700">Open queue</a></div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3 border border-slate-200"><span class="text-sm font-medium">Open</span><span class="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700">9</span></div>
+              <div class="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3 border border-slate-200"><span class="text-sm font-medium">In Progress</span><span class="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">8</span></div>
+              <div class="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3 border border-slate-200"><span class="text-sm font-medium">Resolved</span><span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">17</span></div>
+              <div class="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3 border border-slate-200"><span class="text-sm font-medium">Overdue</span><span class="rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold text-violet-700">4</span></div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6"><div><h3 class="text-lg font-semibold text-slate-900">Recent Activities</h3><p class="text-sm text-slate-500 mt-1">Property-level updates</p></div></div>
+            <div class="space-y-4 text-sm">
+              <div class="border-l-2 border-brand-500 pl-4"><p class="font-medium text-slate-800">A-203 plumbing issue escalated</p><p class="text-slate-500 mt-1">Assigned to Rahul Singh • 10 min ago</p></div>
+              <div class="border-l-2 border-emerald-500 pl-4"><p class="font-medium text-slate-800">Visitor approved for M-110</p><p class="text-slate-500 mt-1">Gate 2 • 30 min ago</p></div>
+              <div class="border-l-2 border-amber-500 pl-4"><p class="font-medium text-slate-800">Payment reminder sent to 8 tenants</p><p class="text-slate-500 mt-1">Batch action • Today</p></div>
+              <div class="border-l-2 border-violet-500 pl-4"><p class="font-medium text-slate-800">Clubhouse request awaiting review</p><p class="text-slate-500 mt-1">Tomorrow evening slot</p></div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6"><div><h3 class="text-lg font-semibold text-slate-900">Manager Focus</h3><p class="text-sm text-slate-500 mt-1">Role-specific widgets</p></div></div>
+            <div class="space-y-4">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-sm text-slate-500">Staff On Duty</p><p class="mt-2 text-2xl font-semibold">12</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-sm text-slate-500">Move-ins This Week</p><p class="mt-2 text-2xl font-semibold">5</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-sm text-slate-500">Vendor Follow-ups</p><p class="mt-2 text-2xl font-semibold">3</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-5"><h3 class="text-lg font-semibold text-slate-900">Upcoming Bookings</h3><a href="#" class="text-sm font-medium text-brand-700">Review</a></div>
+            <div class="space-y-4 text-sm">
+              <div class="rounded-2xl border border-slate-200 p-4"><p class="font-medium">Gym • Today 6:30 PM</p><p class="text-slate-500 mt-1">Resident: Karthik Iyer • Approved</p></div>
+              <div class="rounded-2xl border border-slate-200 p-4"><p class="font-medium">Clubhouse • Friday 8:00 PM</p><p class="text-slate-500 mt-1">Resident party • Awaiting approval</p></div>
+              <div class="rounded-2xl border border-slate-200 p-4"><p class="font-medium">Meeting Room • Saturday 10:00 AM</p><p class="text-slate-500 mt-1">Association review • Confirmed</p></div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-5"><h3 class="text-lg font-semibold text-slate-900">Latest Announcements</h3><a href="#" class="text-sm font-medium text-brand-700">Create</a></div>
+            <div class="space-y-4 text-sm">
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4"><p class="font-medium">Basement cleaning notice</p><p class="text-slate-500 mt-1">Maple Residency • Medium priority</p></div>
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4"><p class="font-medium">Elevator inspection scheduled</p><p class="text-slate-500 mt-1">Skyline Tower • High priority</p></div>
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4"><p class="font-medium">Weekend parking rules reminder</p><p class="text-slate-500 mt-1">Residents & staff</p></div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-5"><h3 class="text-lg font-semibold text-slate-900">Quick Actions</h3><span class="text-sm text-slate-500">Operational shortcuts</span></div>
+            <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
+              <a href="#" class="rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white hover:bg-brand-700 text-center">Add Tenant</a>
+              <a href="#" class="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 text-center">Raise Ticket</a>
+              <a href="#" class="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 text-center">Record Payment</a>
+              <a href="#" class="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 text-center">Register Visitor</a>
+              <a href="#" class="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 text-center">Book Facility</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
