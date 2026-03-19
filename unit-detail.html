@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit Detail | Building Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#f0f7ff",
+              100: "#dceeff",
+              200: "#b9ddff",
+              300: "#84c5ff",
+              400: "#4aa5ff",
+              500: "#1d84ff",
+              600: "#0d68db",
+              700: "#0f53ae",
+              800: "#124889",
+              900: "#163d70"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+  <div class="min-h-screen lg:flex">
+    <!-- Sidebar -->
+    <aside class="hidden lg:flex lg:w-72 xl:w-80 flex-col border-r border-slate-200 bg-slate-950 text-slate-100">
+      <div class="px-6 py-6 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="h-11 w-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-soft">
+            B
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Prototype</p>
+            <h1 class="text-lg font-semibold">Building Management</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-6 py-5 border-b border-white/10">
+        <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Signed in as</p>
+        <div class="mt-3 rounded-2xl bg-white/5 p-4 border border-white/10">
+          <p class="font-semibold text-white">Aarav Mehta</p>
+          <p class="text-sm text-slate-400">Admin</p>
+        </div>
+      </div>
+
+      <nav class="flex-1 px-4 py-6 space-y-1 text-sm">
+        <a href="dashboard-admin.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Dashboard</a>
+        <a href="buildings.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Buildings / Properties</a>
+        <a href="units.html" class="flex items-center justify-between rounded-2xl bg-brand-600/20 px-4 py-3 text-white border border-brand-500/30">
+          <span>Units</span>
+          <span class="text-xs text-brand-200">Active</span>
+        </a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Tenants</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Leases</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Maintenance</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Billing & Payments</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Visitors</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Facility Booking</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Communication</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Documents</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Reports</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Users & Roles</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Settings</a>
+      </nav>
+
+      <div class="p-4 border-t border-white/10">
+        <a href="role-select.html" class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 hover:bg-white/10">
+          Switch Role
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <div class="flex-1 min-w-0">
+      <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8 xl:px-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="text-sm text-slate-500">Home / Units / 12A</p>
+            <h2 class="text-2xl font-semibold text-slate-900 mt-1">Unit Detail</h2>
+          </div>
+
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href="units.html"
+              class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
+            >
+              Back to Units
+            </a>
+            <a
+              href="floor-view.html"
+              class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700"
+            >
+              Floor View
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-7xl px-6 py-8 sm:px-8 xl:px-10 space-y-8">
+        <!-- Unit summary -->
+        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
+          <div class="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3">
+                <h3 class="text-2xl font-semibold text-slate-900">Unit 12A</h3>
+                <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">Occupied</span>
+              </div>
+              <p class="mt-3 text-sm text-slate-500">Skyline Tower • Floor 12 • 2 BHK</p>
+              <p class="mt-4 max-w-3xl text-sm leading-6 text-slate-600">
+                Residential unit with balcony access, modular kitchen, and covered parking allocation.
+                This page summarizes occupancy, lease, payments, maintenance, and documents for the unit.
+              </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2 xl:w-[420px]">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Area</p>
+                <p class="mt-2 text-2xl font-semibold text-slate-900">1,150 sq ft</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Monthly Charge</p>
+                <p class="mt-2 text-2xl font-semibold text-slate-900">₹28,000</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Lease End</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">31 Dec 2026</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Assigned Parking</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">B2-17</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#" class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700">Assign Tenant</a>
+            <a href="#" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">View Lease</a>
+            <a href="#" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">View Bills</a>
+            <a href="#" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Raise Work Order</a>
+          </div>
+        </section>
+
+        <!-- Current occupancy + tenant -->
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-lg font-semibold text-slate-900">Current Occupancy</h3>
+            <p class="mt-2 text-sm text-slate-500">Live status for this unit</p>
+
+            <div class="mt-5 space-y-4">
+              <div class="rounded-2xl border border-emerald-100 bg-emerald-50 p-4">
+                <p class="text-sm text-emerald-700">Occupancy Status</p>
+                <p class="mt-2 text-2xl font-semibold text-emerald-900">Occupied</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Move-in Date</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">01 Jan 2026</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Occupancy Type</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">Leased</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="xl:col-span-2 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-lg font-semibold text-slate-900">Tenant Details</h3>
+            <p class="mt-2 text-sm text-slate-500">Primary resident and contact information</p>
+
+            <div class="mt-6 grid gap-4 md:grid-cols-2">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Tenant Name</p>
+                <p class="mt-2 text-lg font-semibold text-slate-900">Rohan Iyer</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Phone</p>
+                <p class="mt-2 text-lg font-semibold text-slate-900">+91 98765 43210</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Email</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">rohan.iyer@email.com</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Emergency Contact</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">Lakshmi Iyer • +91 90000 11111</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Lease + payment -->
+        <section class="grid gap-6 xl:grid-cols-2">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-lg font-semibold text-slate-900">Lease Details</h3>
+            <p class="mt-2 text-sm text-slate-500">Current active lease information</p>
+
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Lease Start</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">01 Jan 2026</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Lease End</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">31 Dec 2026</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Security Deposit</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">₹56,000</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Billing Cycle</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">Monthly</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-lg font-semibold text-slate-900">Payment Snapshot</h3>
+            <p class="mt-2 text-sm text-slate-500">Latest billing and dues overview</p>
+
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-emerald-100 bg-emerald-50 p-4">
+                <p class="text-sm text-emerald-700">Last Payment</p>
+                <p class="mt-2 text-base font-semibold text-emerald-900">₹28,000 • 05 Mar 2026</p>
+              </div>
+              <div class="rounded-2xl border border-amber-100 bg-amber-50 p-4">
+                <p class="text-sm text-amber-700">Pending Amount</p>
+                <p class="mt-2 text-base font-semibold text-amber-900">₹0</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Upcoming Bill</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">₹28,000 • 01 Apr 2026</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-sm text-slate-500">Payment Mode</p>
+                <p class="mt-2 text-base font-semibold text-slate-900">Bank Transfer</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Maintenance + documents -->
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="xl:col-span-2 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-lg font-semibold text-slate-900">Maintenance History</h3>
+            <p class="mt-2 text-sm text-slate-500">Recent issues and service records for this unit</p>
+
+            <div class="mt-6 space-y-4 text-sm">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <p class="font-semibold text-slate-900">AC servicing completed</p>
+                    <p class="mt-1 text-slate-500">Routine maintenance • 10 Mar 2026</p>
+                  </div>
+                  <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">Closed</span>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <p class="font-semibold text-slate-900">Kitchen sink leakage</p>
+                    <p class="mt-1 text-slate-500">Reported by tenant • 21 Feb 2026</p>
+                  </div>
+                  <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">Resolved</span>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <p class="font-semibold text-slate-900">Balcony door alignment check</p>
+                    <p class="mt-1 text-slate-500">Preventive inspection • 03 Jan 2026</p>
+                  </div>
+                  <span class="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700">Logged</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-lg font-semibold text-slate-900">Uploaded Documents</h3>
+            <p class="mt-2 text-sm text-slate-500">Key records attached to this unit</p>
+
+            <div class="mt-6 space-y-3">
+              <a href="#" class="block rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 hover:bg-slate-100">
+                Lease Agreement - 2026.pdf
+              </a>
+              <a href="#" class="block rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 hover:bg-slate-100">
+                KYC Documents - Tenant.pdf
+              </a>
+              <a href="#" class="block rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 hover:bg-slate-100">
+                Move-in Checklist.pdf
+              </a>
+              <a href="#" class="block rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 hover:bg-slate-100">
+                Maintenance Service Report.pdf
+              </a>
+            </div>
+
+            <div class="mt-6 rounded-2xl border border-brand-100 bg-brand-50 p-4">
+              <p class="text-sm font-medium text-brand-700">Prototype Note</p>
+              <p class="mt-2 text-sm text-slate-700">
+                Later this section can support uploads, previews, and version history for unit-level documents.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
