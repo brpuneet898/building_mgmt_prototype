@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notifications Center | Building Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#f0f7ff",
+              100: "#dceeff",
+              200: "#b9ddff",
+              300: "#84c5ff",
+              400: "#4aa5ff",
+              500: "#1d84ff",
+              600: "#0d68db",
+              700: "#0f53ae",
+              800: "#124889",
+              900: "#163d70"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+  <div class="min-h-screen lg:flex">
+    <aside class="hidden lg:flex lg:w-72 xl:w-80 flex-col border-r border-slate-200 bg-slate-950 text-slate-100">
+      <div class="px-6 py-6 border-b border-white/10"><div class="flex items-center gap-3"><div class="h-11 w-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-soft">B</div><div><p class="text-xs uppercase tracking-[0.25em] text-slate-400">Prototype</p><h1 class="text-lg font-semibold">Building Management</h1></div></div></div>
+      <div class="px-6 py-5 border-b border-white/10"><p class="text-xs uppercase tracking-[0.25em] text-slate-500">Signed in as</p><div class="mt-3 rounded-2xl bg-white/5 p-4 border border-white/10"><p class="font-semibold text-white">Ravi Kumar</p><p class="text-sm text-slate-400">Tenant • Unit A-203</p></div></div>
+      <nav class="flex-1 px-4 py-6 space-y-1 text-sm">
+        <a href="dashboard-tenant.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Dashboard</a>
+        <a href="announcements.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Announcements</a>
+        <a href="complaints-feedback.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Complaints / Feedback</a>
+        <a href="notifications-center.html" class="flex items-center justify-between rounded-2xl bg-brand-600/20 px-4 py-3 text-white border border-brand-500/30"><span>Notifications Center</span><span class="text-xs text-brand-200">Active</span></a>
+      </nav>
+      <div class="p-4 border-t border-white/10"><a href="role-select.html" class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 hover:bg-white/10">Switch Role</a></div>
+    </aside>
+
+    <div class="flex-1 min-w-0">
+      <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8 xl:px-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div><p class="text-sm text-slate-500">Home / Communication / Notifications Center</p><h2 class="text-2xl font-semibold text-slate-900 mt-1">Notifications Center</h2></div>
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <input type="text" placeholder="Search payment reminder, lease, booking..." class="w-full sm:w-80 rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+            <button class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Mark All Read</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-7xl px-6 py-8 sm:px-8 xl:px-10 space-y-8">
+        <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">All Alerts</p><p class="mt-3 text-3xl font-semibold text-slate-900">18</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Payment Reminders</p><p class="mt-3 text-3xl font-semibold text-slate-900">4</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Lease Expiry Alerts</p><p class="mt-3 text-3xl font-semibold text-slate-900">2</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Maintenance Updates</p><p class="mt-3 text-3xl font-semibold text-slate-900">7</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Booking Confirmations</p><p class="mt-3 text-3xl font-semibold text-slate-900">5</p></div>
+        </section>
+
+        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900">List of Alerts</h3>
+              <p class="text-sm text-slate-500 mt-1">Includes reminders and activity updates relevant to the tenant account.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-rose-100 px-3 py-1 font-semibold text-rose-700">Urgent</span>
+              <span class="rounded-full bg-amber-100 px-3 py-1 font-semibold text-amber-700">Action Needed</span>
+              <span class="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-700">Informational</span>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="rounded-3xl border border-rose-200 bg-rose-50/50 p-5">
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2"><span class="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700">Payment Reminder</span><span class="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">Due Soon</span></div>
+                  <h4 class="mt-3 text-base font-semibold text-slate-900">Invoice INV-2026-031 due on 28 Mar 2026</h4>
+                  <p class="mt-1 text-sm text-slate-600">Maintenance and utility charges totaling ₹18,500 remain unpaid. Complete payment before the due date to avoid late fees.</p>
+                </div>
+                <p class="text-xs text-slate-500">2 hours ago</p>
+              </div>
+            </div>
+
+            <div class="rounded-3xl border border-amber-200 bg-amber-50/50 p-5">
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2"><span class="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">Lease Expiry Alert</span><span class="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700">Review</span></div>
+                  <h4 class="mt-3 text-base font-semibold text-slate-900">Lease renewal window opens next month</h4>
+                  <p class="mt-1 text-sm text-slate-600">Your current lease ends on 31 Dec 2026. Renewal discussion and document preparation will begin in the next cycle.</p>
+                </div>
+                <p class="text-xs text-slate-500">Today</p>
+              </div>
+            </div>
+
+            <div class="rounded-3xl border border-slate-200 bg-white p-5">
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2"><span class="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700">Maintenance Update</span></div>
+                  <h4 class="mt-3 text-base font-semibold text-slate-900">Ticket TCK-2048 moved to In Progress</h4>
+                  <p class="mt-1 text-sm text-slate-600">AquaFlow Plumbing has been assigned and will visit Unit A-203 during the service window between 3:00 PM and 5:00 PM.</p>
+                </div>
+                <p class="text-xs text-slate-500">1 day ago</p>
+              </div>
+            </div>
+
+            <div class="rounded-3xl border border-slate-200 bg-white p-5">
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2"><span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">Booking Confirmation</span></div>
+                  <h4 class="mt-3 text-base font-semibold text-slate-900">Clubhouse booking approved for Friday 7:00 PM</h4>
+                  <p class="mt-1 text-sm text-slate-600">Your facility booking has been confirmed. Please keep the acknowledgment message ready for on-site verification.</p>
+                </div>
+                <p class="text-xs text-slate-500">1 day ago</p>
+              </div>
+            </div>
+
+            <div class="rounded-3xl border border-slate-200 bg-white p-5">
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2"><span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Announcement</span></div>
+                  <h4 class="mt-3 text-base font-semibold text-slate-900">Water tank cleaning notice published</h4>
+                  <p class="mt-1 text-sm text-slate-600">Residents have been informed about a temporary water shutdown tomorrow from 10:00 AM to 1:00 PM.</p>
+                </div>
+                <p class="text-xs text-slate-500">2 days ago</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
