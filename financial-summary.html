@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial Summary | Building Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#f0f7ff",
+              100: "#dceeff",
+              200: "#b9ddff",
+              300: "#84c5ff",
+              400: "#4aa5ff",
+              500: "#1d84ff",
+              600: "#0d68db",
+              700: "#0f53ae",
+              800: "#124889",
+              900: "#163d70"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+  <div class="min-h-screen lg:flex">
+    <aside class="hidden lg:flex lg:w-72 xl:w-80 flex-col border-r border-slate-200 bg-slate-950 text-slate-100">
+      <div class="px-6 py-6 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="h-11 w-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-soft">B</div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Prototype</p>
+            <h1 class="text-lg font-semibold">Building Management</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-6 py-5 border-b border-white/10">
+        <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Signed in as</p>
+        <div class="mt-3 rounded-2xl bg-white/5 p-4 border border-white/10">
+          <p class="font-semibold text-white">Aarav Mehta</p>
+          <p class="text-sm text-slate-400">Admin</p>
+        </div>
+      </div>
+
+      <nav class="flex-1 px-4 py-6 space-y-1 text-sm">
+        <a href="dashboard-admin.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Dashboard</a>
+        <a href="buildings.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Buildings / Properties</a>
+        <a href="units.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Units</a>
+        <a href="tenants.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Tenants</a>
+        <a href="lease-list.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Leases</a>
+        <a href="maintenance-dashboard.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Maintenance</a>
+        <a href="invoice-list.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Billing & Payments</a>
+        <a href="reports-dashboard.html" class="flex items-center justify-between rounded-2xl bg-brand-600/20 px-4 py-3 text-white border border-brand-500/30"><span>Reports</span><span class="text-xs text-brand-200">Active</span></a>
+      </nav>
+
+      <div class="p-4 border-t border-white/10">
+        <a href="role-select.html" class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 hover:bg-white/10">Switch Role</a>
+      </div>
+    </aside>
+
+    <div class="flex-1 min-w-0">
+      <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8 xl:px-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="text-sm text-slate-500">Home / Reports / Financial Summary</p>
+            <h2 class="text-2xl font-semibold text-slate-900 mt-1">Financial Summary</h2>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="reports-dashboard.html" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Back to Reports</a>
+            <button class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Download PDF</button>
+            <button class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700">Download Excel</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-7xl px-6 py-8 sm:px-8 xl:px-10 space-y-8">
+        <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div class="rounded-3xl border border-emerald-200 bg-white p-5 shadow-soft">
+            <p class="text-sm text-slate-500">Rental Income</p>
+            <p class="mt-3 text-3xl font-semibold text-slate-900">₹12.6L</p>
+            <p class="mt-2 text-xs text-emerald-600">+8.4% from last month</p>
+          </div>
+          <div class="rounded-3xl border border-emerald-200 bg-white p-5 shadow-soft">
+            <p class="text-sm text-slate-500">Service & Other Income</p>
+            <p class="mt-3 text-3xl font-semibold text-slate-900">₹5.8L</p>
+            <p class="mt-2 text-xs text-emerald-600">Parking, bookings, and misc. fees</p>
+          </div>
+          <div class="rounded-3xl border border-rose-200 bg-white p-5 shadow-soft">
+            <p class="text-sm text-slate-500">Operating Expense</p>
+            <p class="mt-3 text-3xl font-semibold text-slate-900">₹7.4L</p>
+            <p class="mt-2 text-xs text-slate-500">Utilities, staff, and upkeep</p>
+          </div>
+          <div class="rounded-3xl border border-rose-200 bg-white p-5 shadow-soft">
+            <p class="text-sm text-slate-500">Capital / Major Repairs</p>
+            <p class="mt-3 text-3xl font-semibold text-slate-900">₹3.8L</p>
+            <p class="mt-2 text-xs text-amber-600">Elevator and plumbing works</p>
+          </div>
+        </section>
+
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="xl:col-span-2 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900">Monthly Trend Chart</h3>
+                <p class="text-sm text-slate-500 mt-1">Income and expense trend across the last six months</p>
+              </div>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">FY 2025–26</span>
+            </div>
+
+            <div class="grid grid-cols-6 gap-4 items-end h-72">
+              <div class="flex flex-col items-center gap-3">
+                <div class="flex items-end gap-2 h-56">
+                  <div class="w-8 rounded-t-2xl bg-brand-200" style="height: 72%"></div>
+                  <div class="w-8 rounded-t-2xl bg-slate-300" style="height: 46%"></div>
+                </div>
+                <span class="text-xs text-slate-500">Oct</span>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <div class="flex items-end gap-2 h-56">
+                  <div class="w-8 rounded-t-2xl bg-brand-300" style="height: 76%"></div>
+                  <div class="w-8 rounded-t-2xl bg-slate-300" style="height: 48%"></div>
+                </div>
+                <span class="text-xs text-slate-500">Nov</span>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <div class="flex items-end gap-2 h-56">
+                  <div class="w-8 rounded-t-2xl bg-brand-400" style="height: 80%"></div>
+                  <div class="w-8 rounded-t-2xl bg-slate-300" style="height: 52%"></div>
+                </div>
+                <span class="text-xs text-slate-500">Dec</span>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <div class="flex items-end gap-2 h-56">
+                  <div class="w-8 rounded-t-2xl bg-brand-500" style="height: 84%"></div>
+                  <div class="w-8 rounded-t-2xl bg-slate-300" style="height: 58%"></div>
+                </div>
+                <span class="text-xs text-slate-500">Jan</span>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <div class="flex items-end gap-2 h-56">
+                  <div class="w-8 rounded-t-2xl bg-brand-600" style="height: 88%"></div>
+                  <div class="w-8 rounded-t-2xl bg-slate-300" style="height: 61%"></div>
+                </div>
+                <span class="text-xs text-slate-500">Feb</span>
+              </div>
+              <div class="flex flex-col items-center gap-3">
+                <div class="flex items-end gap-2 h-56">
+                  <div class="w-8 rounded-t-2xl bg-brand-700" style="height: 91%"></div>
+                  <div class="w-8 rounded-t-2xl bg-slate-300" style="height: 64%"></div>
+                </div>
+                <span class="text-xs text-slate-500">Mar</span>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-6 text-sm">
+              <div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-brand-600"></span><span class="text-slate-600">Income</span></div>
+              <div class="flex items-center gap-2"><span class="h-3 w-3 rounded-full bg-slate-300"></span><span class="text-slate-600">Expense</span></div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-lg font-semibold text-slate-900">Outstanding Dues Summary</h3>
+            <p class="mt-1 text-sm text-slate-500">Open receivables by age bucket</p>
+
+            <div class="mt-6 space-y-4">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div class="flex items-center justify-between"><p class="text-sm text-slate-500">0–30 Days</p><p class="font-semibold text-slate-900">₹1.42L</p></div>
+                <div class="mt-3 h-2 rounded-full bg-slate-200 overflow-hidden"><div class="h-full w-[35%] rounded-full bg-emerald-500"></div></div>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div class="flex items-center justify-between"><p class="text-sm text-slate-500">31–60 Days</p><p class="font-semibold text-slate-900">₹1.18L</p></div>
+                <div class="mt-3 h-2 rounded-full bg-slate-200 overflow-hidden"><div class="h-full w-[29%] rounded-full bg-amber-500"></div></div>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div class="flex items-center justify-between"><p class="text-sm text-slate-500">61–90 Days</p><p class="font-semibold text-slate-900">₹0.96L</p></div>
+                <div class="mt-3 h-2 rounded-full bg-slate-200 overflow-hidden"><div class="h-full w-[23%] rounded-full bg-orange-500"></div></div>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div class="flex items-center justify-between"><p class="text-sm text-slate-500">90+ Days</p><p class="font-semibold text-rose-600">₹1.26L</p></div>
+                <div class="mt-3 h-2 rounded-full bg-slate-200 overflow-hidden"><div class="h-full w-[31%] rounded-full bg-rose-500"></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="xl:col-span-2 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900">Budget vs Actual Chart</h3>
+                <p class="text-sm text-slate-500 mt-1">Compare planned and realized spend across major categories</p>
+              </div>
+              <span class="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">Current Month</span>
+            </div>
+
+            <div class="space-y-5">
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm"><span class="font-medium text-slate-700">Staff & Operations</span><span class="text-slate-500">Budget ₹2.4L / Actual ₹2.2L</span></div>
+                <div class="h-3 rounded-full bg-slate-100 overflow-hidden"><div class="h-full w-[92%] rounded-full bg-brand-600"></div></div>
+              </div>
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm"><span class="font-medium text-slate-700">Utilities</span><span class="text-slate-500">Budget ₹1.8L / Actual ₹1.9L</span></div>
+                <div class="h-3 rounded-full bg-slate-100 overflow-hidden"><div class="h-full w-[100%] rounded-full bg-amber-500"></div></div>
+              </div>
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm"><span class="font-medium text-slate-700">Repairs & Maintenance</span><span class="text-slate-500">Budget ₹2.1L / Actual ₹2.6L</span></div>
+                <div class="h-3 rounded-full bg-slate-100 overflow-hidden"><div class="h-full w-[100%] rounded-full bg-rose-500"></div></div>
+              </div>
+              <div>
+                <div class="mb-2 flex items-center justify-between text-sm"><span class="font-medium text-slate-700">Amenities & Community</span><span class="text-slate-500">Budget ₹0.9L / Actual ₹0.74L</span></div>
+                <div class="h-3 rounded-full bg-slate-100 overflow-hidden"><div class="h-full w-[82%] rounded-full bg-emerald-500"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-lg font-semibold text-slate-900">Financial Snapshot</h3>
+            <p class="mt-1 text-sm text-slate-500">Quick summary for review meetings</p>
+
+            <div class="mt-6 space-y-4 text-sm">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 flex items-center justify-between"><span class="text-slate-600">Net Operating Surplus</span><span class="font-semibold text-emerald-700">₹7.2L</span></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 flex items-center justify-between"><span class="text-slate-600">Collection Rate</span><span class="font-semibold text-slate-900">84%</span></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 flex items-center justify-between"><span class="text-slate-600">Largest Expense Head</span><span class="font-semibold text-slate-900">Repairs</span></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 flex items-center justify-between"><span class="text-slate-600">Budget Variance</span><span class="font-semibold text-rose-600">+6.3%</span></div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
