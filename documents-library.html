@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documents Library | Building Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#f0f7ff",
+              100: "#dceeff",
+              200: "#b9ddff",
+              300: "#84c5ff",
+              400: "#4aa5ff",
+              500: "#1d84ff",
+              600: "#0d68db",
+              700: "#0f53ae",
+              800: "#124889",
+              900: "#163d70"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+  <div class="min-h-screen lg:flex">
+    <aside class="hidden lg:flex lg:w-72 xl:w-80 flex-col border-r border-slate-200 bg-slate-950 text-slate-100">
+      <div class="px-6 py-6 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="h-11 w-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-soft">B</div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Prototype</p>
+            <h1 class="text-lg font-semibold">Building Management</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-6 py-5 border-b border-white/10">
+        <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Signed in as</p>
+        <div class="mt-3 rounded-2xl bg-white/5 p-4 border border-white/10">
+          <p class="font-semibold text-white">Aarav Mehta</p>
+          <p class="text-sm text-slate-400">Admin</p>
+        </div>
+      </div>
+
+      <nav class="flex-1 px-4 py-6 space-y-1 text-sm">
+        <a href="dashboard-admin.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Dashboard</a>
+        <a href="buildings.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Buildings / Properties</a>
+        <a href="units.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Units</a>
+        <a href="tenants.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Tenants</a>
+        <a href="lease-list.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Leases</a>
+        <a href="maintenance-dashboard.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Maintenance</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Billing & Payments</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Visitors</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Facility Booking</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Communication</a>
+        <a href="documents-library.html" class="flex items-center justify-between rounded-2xl bg-brand-600/20 px-4 py-3 text-white border border-brand-500/30">
+          <span>Documents</span>
+          <span class="text-xs text-brand-200">Active</span>
+        </a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Reports</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Users & Roles</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Settings</a>
+      </nav>
+
+      <div class="p-4 border-t border-white/10">
+        <a href="role-select.html" class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 hover:bg-white/10">Switch Role</a>
+      </div>
+    </aside>
+
+    <div class="flex-1 min-w-0">
+      <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8 xl:px-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="text-sm text-slate-500">Home / Documents</p>
+            <h2 class="text-2xl font-semibold text-slate-900 mt-1">Documents Library</h2>
+          </div>
+
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <input type="text" placeholder="Search by file name, entity, document type..." class="w-full sm:w-80 rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+            <a href="entity-linked-documents.html" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Open Linked View</a>
+            <button class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700">Upload Placeholder</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-7xl px-6 py-8 sm:px-8 xl:px-10 space-y-8">
+        <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Total Files</p><p class="mt-3 text-3xl font-semibold text-slate-900">1,284</p><p class="mt-2 text-xs text-slate-500">Across all modules</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Recent Uploads</p><p class="mt-3 text-3xl font-semibold text-slate-900">36</p><p class="mt-2 text-xs text-emerald-600">This week</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Pending Review</p><p class="mt-3 text-3xl font-semibold text-slate-900">14</p><p class="mt-2 text-xs text-amber-600">Need verification</p></div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft"><p class="text-sm text-slate-500">Storage Groups</p><p class="mt-3 text-3xl font-semibold text-slate-900">8</p><p class="mt-2 text-xs text-slate-500">Entity-based folders</p></div>
+        </section>
+
+        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <div class="flex flex-col gap-5">
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900">Search & Filters</h3>
+              <p class="text-sm text-slate-500 mt-1">Filter documents by type, linked entity, and upload date.</p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+              <div>
+                <label class="mb-2 block text-sm font-medium text-slate-700">Type</label>
+                <select class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-100">
+                  <option>All Types</option>
+                  <option>Agreement</option>
+                  <option>ID Proof</option>
+                  <option>Receipt</option>
+                  <option>Inspection File</option>
+                  <option>Manual</option>
+                </select>
+              </div>
+              <div>
+                <label class="mb-2 block text-sm font-medium text-slate-700">Entity</label>
+                <select class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-100">
+                  <option>All Entities</option>
+                  <option>Building</option>
+                  <option>Unit</option>
+                  <option>Tenant</option>
+                  <option>Lease</option>
+                  <option>Ticket</option>
+                  <option>Invoice</option>
+                </select>
+              </div>
+              <div>
+                <label class="mb-2 block text-sm font-medium text-slate-700">Date Range</label>
+                <select class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-100">
+                  <option>All Dates</option>
+                  <option>Today</option>
+                  <option>Last 7 Days</option>
+                  <option>Last 30 Days</option>
+                  <option>This Quarter</option>
+                </select>
+              </div>
+              <div>
+                <label class="mb-2 block text-sm font-medium text-slate-700">File Format</label>
+                <select class="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-100">
+                  <option>All Formats</option>
+                  <option>PDF</option>
+                  <option>JPG / PNG</option>
+                  <option>DOCX</option>
+                  <option>XLSX</option>
+                </select>
+              </div>
+              <div class="flex items-end">
+                <button class="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100">Reset Filters</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="xl:col-span-1 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-5">
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900">Folder Navigation</h3>
+                <p class="text-sm text-slate-500 mt-1">Browse by module and entity.</p>
+              </div>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">8 folders</span>
+            </div>
+
+            <div class="space-y-3 text-sm">
+              <a href="entity-linked-documents.html" class="flex items-center justify-between rounded-2xl border border-brand-200 bg-brand-50 px-4 py-3 text-brand-700">
+                <span>All Entity-linked Documents</span>
+                <span class="font-semibold">412</span>
+              </a>
+              <button class="w-full flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-700 hover:bg-slate-100"><span>Buildings</span><span class="font-semibold">86</span></button>
+              <button class="w-full flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-700 hover:bg-slate-100"><span>Units</span><span class="font-semibold">214</span></button>
+              <button class="w-full flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-700 hover:bg-slate-100"><span>Tenants</span><span class="font-semibold">275</span></button>
+              <button class="w-full flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-700 hover:bg-slate-100"><span>Leases</span><span class="font-semibold">148</span></button>
+              <button class="w-full flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-700 hover:bg-slate-100"><span>Tickets</span><span class="font-semibold">109</span></button>
+              <button class="w-full flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-700 hover:bg-slate-100"><span>Invoices</span><span class="font-semibold">52</span></button>
+            </div>
+          </div>
+
+          <div class="xl:col-span-2 rounded-3xl border border-slate-200 bg-white shadow-soft overflow-hidden">
+            <div class="flex flex-col gap-4 border-b border-slate-200 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900">Files Table</h3>
+                <p class="text-sm text-slate-500 mt-1">Document cards and tabular file listing for prototype review.</p>
+              </div>
+              <div class="flex gap-3">
+                <button class="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">Cards</button>
+                <button class="rounded-2xl bg-brand-600 px-4 py-2 text-sm font-medium text-white">Table</button>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="min-w-full text-sm">
+                <thead class="bg-slate-50 text-left text-slate-500">
+                  <tr>
+                    <th class="px-6 py-4 font-medium">File Name</th>
+                    <th class="px-6 py-4 font-medium">Type</th>
+                    <th class="px-6 py-4 font-medium">Entity</th>
+                    <th class="px-6 py-4 font-medium">Linked Record</th>
+                    <th class="px-6 py-4 font-medium">Date</th>
+                    <th class="px-6 py-4 font-medium">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 bg-white">
+                  <tr>
+                    <td class="px-6 py-4">
+                      <p class="font-medium text-slate-900">Lease_A203_2026.pdf</p>
+                      <p class="text-xs text-slate-500 mt-1">1.8 MB • PDF</p>
+                    </td>
+                    <td class="px-6 py-4"><span class="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700">Agreement</span></td>
+                    <td class="px-6 py-4 text-slate-700">Lease</td>
+                    <td class="px-6 py-4 text-slate-700">LEA-2026-014</td>
+                    <td class="px-6 py-4 text-slate-700">20 Mar 2026</td>
+                    <td class="px-6 py-4"><a href="entity-linked-documents.html" class="font-semibold text-brand-700 hover:text-brand-800">View</a></td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4">
+                      <p class="font-medium text-slate-900">Tenant_RaviKumar_ID.pdf</p>
+                      <p class="text-xs text-slate-500 mt-1">560 KB • PDF</p>
+                    </td>
+                    <td class="px-6 py-4"><span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">ID Proof</span></td>
+                    <td class="px-6 py-4 text-slate-700">Tenant</td>
+                    <td class="px-6 py-4 text-slate-700">TEN-1024</td>
+                    <td class="px-6 py-4 text-slate-700">18 Mar 2026</td>
+                    <td class="px-6 py-4"><a href="entity-linked-documents.html" class="font-semibold text-brand-700 hover:text-brand-800">Open</a></td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4">
+                      <p class="font-medium text-slate-900">Unit_A203_Inspection.jpg</p>
+                      <p class="text-xs text-slate-500 mt-1">3.4 MB • JPG</p>
+                    </td>
+                    <td class="px-6 py-4"><span class="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">Inspection File</span></td>
+                    <td class="px-6 py-4 text-slate-700">Unit</td>
+                    <td class="px-6 py-4 text-slate-700">A-203</td>
+                    <td class="px-6 py-4 text-slate-700">16 Mar 2026</td>
+                    <td class="px-6 py-4"><a href="entity-linked-documents.html" class="font-semibold text-brand-700 hover:text-brand-800">Preview</a></td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4">
+                      <p class="font-medium text-slate-900">Kitchen_Leak_TCK2048.png</p>
+                      <p class="text-xs text-slate-500 mt-1">2.1 MB • PNG</p>
+                    </td>
+                    <td class="px-6 py-4"><span class="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700">Ticket Evidence</span></td>
+                    <td class="px-6 py-4 text-slate-700">Ticket</td>
+                    <td class="px-6 py-4 text-slate-700">TCK-2048</td>
+                    <td class="px-6 py-4 text-slate-700">20 Mar 2026</td>
+                    <td class="px-6 py-4"><a href="ticket-detail.html" class="font-semibold text-brand-700 hover:text-brand-800">Ticket</a></td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4">
+                      <p class="font-medium text-slate-900">Tower_Pump_Manual.pdf</p>
+                      <p class="text-xs text-slate-500 mt-1">4.8 MB • PDF</p>
+                    </td>
+                    <td class="px-6 py-4"><span class="rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold text-violet-700">Manual</span></td>
+                    <td class="px-6 py-4 text-slate-700">Building</td>
+                    <td class="px-6 py-4 text-slate-700">Skyline Tower</td>
+                    <td class="px-6 py-4 text-slate-700">11 Mar 2026</td>
+                    <td class="px-6 py-4"><a href="building-detail.html" class="font-semibold text-brand-700 hover:text-brand-800">Building</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid gap-6 xl:grid-cols-3">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <h3 class="text-lg font-semibold text-slate-900">Quick Upload Buckets</h3>
+            <div class="mt-5 space-y-3 text-sm">
+              <button class="w-full rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-4 text-left text-slate-700 hover:bg-slate-100">Upload building documents</button>
+              <button class="w-full rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-4 text-left text-slate-700 hover:bg-slate-100">Upload tenant KYC files</button>
+              <button class="w-full rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-4 text-left text-slate-700 hover:bg-slate-100">Upload lease agreements</button>
+              <button class="w-full rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-4 text-left text-slate-700 hover:bg-slate-100">Upload ticket photos or reports</button>
+            </div>
+          </div>
+
+          <div class="xl:col-span-2 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-center justify-between mb-5">
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900">Recent File Cards</h3>
+                <p class="text-sm text-slate-500 mt-1">Alternative card view for lighter prototype exploration.</p>
+              </div>
+              <span class="text-sm font-semibold text-brand-700">Last updated today</span>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Tenant</p>
+                <h4 class="mt-2 font-semibold text-slate-900">Ravi Kumar Passport Copy</h4>
+                <p class="mt-2 text-sm text-slate-500">ID proof linked to tenant profile and active lease.</p>
+                <a href="entity-linked-documents.html" class="mt-4 inline-flex text-sm font-semibold text-brand-700">Open linked files</a>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Ticket</p>
+                <h4 class="mt-2 font-semibold text-slate-900">Leakage Inspection Set</h4>
+                <p class="mt-2 text-sm text-slate-500">Photos, vendor notes, and inspection reference for TCK-2048.</p>
+                <a href="entity-linked-documents.html" class="mt-4 inline-flex text-sm font-semibold text-brand-700">View ticket docs</a>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Building</p>
+                <h4 class="mt-2 font-semibold text-slate-900">Skyline Tower Asset Manual</h4>
+                <p class="mt-2 text-sm text-slate-500">Operating manual available under building-level documents.</p>
+                <a href="entity-linked-documents.html" class="mt-4 inline-flex text-sm font-semibold text-brand-700">Browse manuals</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
