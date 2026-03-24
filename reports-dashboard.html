@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports Dashboard | Building Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#f0f7ff",
+              100: "#dceeff",
+              200: "#b9ddff",
+              300: "#84c5ff",
+              400: "#4aa5ff",
+              500: "#1d84ff",
+              600: "#0d68db",
+              700: "#0f53ae",
+              800: "#124889",
+              900: "#163d70"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+  <div class="min-h-screen lg:flex">
+    <aside class="hidden lg:flex lg:w-72 xl:w-80 flex-col border-r border-slate-200 bg-slate-950 text-slate-100">
+      <div class="px-6 py-6 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="h-11 w-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-soft">B</div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Prototype</p>
+            <h1 class="text-lg font-semibold">Building Management</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-6 py-5 border-b border-white/10">
+        <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Signed in as</p>
+        <div class="mt-3 rounded-2xl bg-white/5 p-4 border border-white/10">
+          <p class="font-semibold text-white">Aarav Mehta</p>
+          <p class="text-sm text-slate-400">Admin</p>
+        </div>
+      </div>
+
+      <nav class="flex-1 px-4 py-6 space-y-1 text-sm">
+        <a href="dashboard-admin.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Dashboard</a>
+        <a href="buildings.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Buildings / Properties</a>
+        <a href="units.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Units</a>
+        <a href="tenants.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Tenants</a>
+        <a href="lease-list.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Leases</a>
+        <a href="maintenance-dashboard.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Maintenance</a>
+        <a href="invoice-list.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Billing & Payments</a>
+        <a href="documents-library.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Documents</a>
+        <a href="reports-dashboard.html" class="flex items-center justify-between rounded-2xl bg-brand-600/20 px-4 py-3 text-white border border-brand-500/30">
+          <span>Reports</span>
+          <span class="text-xs text-brand-200">Active</span>
+        </a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Users & Roles</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Settings</a>
+      </nav>
+
+      <div class="p-4 border-t border-white/10">
+        <a href="role-select.html" class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 hover:bg-white/10">Switch Role</a>
+      </div>
+    </aside>
+
+    <div class="flex-1 min-w-0">
+      <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8 xl:px-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="text-sm text-slate-500">Home / Reports</p>
+            <h2 class="text-2xl font-semibold text-slate-900 mt-1">Reports Dashboard</h2>
+          </div>
+
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <input type="text" placeholder="Search reports, exports, summaries..." class="w-full sm:w-80 rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+            <button class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Filter Reports</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-7xl px-6 py-8 sm:px-8 xl:px-10 space-y-8">
+        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p class="text-sm font-medium text-brand-700">Analytics & Exports</p>
+              <h3 class="mt-2 text-xl font-semibold text-slate-900">Report Center</h3>
+              <p class="mt-2 text-sm text-slate-500 max-w-3xl">View high-level operational and financial reports for occupancy, payments, maintenance, visitors, bookings, and portfolio performance. Download buttons are visual placeholders in this prototype.</p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="financial-summary.html" class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700">Open Financial Summary</a>
+              <a href="occupancy-report.html" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Open Occupancy Report</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-sm font-medium text-brand-700">Occupancy</p>
+                <h3 class="mt-2 text-xl font-semibold text-slate-900">Occupancy Report</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-500">Track occupied versus vacant inventory, building-wise splits, and unit mix utilization.</p>
+              </div>
+              <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">Updated</span>
+            </div>
+            <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <div class="flex items-center justify-between text-sm"><span class="text-slate-500">Portfolio Occupancy</span><span class="font-semibold text-slate-900">91%</span></div>
+              <div class="mt-3 h-3 rounded-full bg-slate-200 overflow-hidden"><div class="h-full w-[91%] rounded-full bg-brand-600"></div></div>
+            </div>
+            <div class="mt-6 flex gap-3">
+              <a href="occupancy-report.html" class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white hover:bg-brand-700">View Report</a>
+              <button class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Download</button>
+            </div>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-sm font-medium text-emerald-700">Collections</p>
+                <h3 class="mt-2 text-xl font-semibold text-slate-900">Payment Collection Report</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-500">Review billed amounts, received collections, overdue trends, and collection efficiency.</p>
+              </div>
+              <span class="rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700">Monthly</span>
+            </div>
+            <div class="mt-6 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-xs text-slate-500">Collected</p><p class="mt-2 text-xl font-semibold text-slate-900">₹12.8L</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-xs text-slate-500">Overdue</p><p class="mt-2 text-xl font-semibold text-rose-600">₹4.8L</p></div>
+            </div>
+            <div class="mt-6 flex gap-3">
+              <a href="financial-summary.html" class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white hover:bg-brand-700">View Report</a>
+              <button class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Download</button>
+            </div>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-sm font-medium text-amber-700">Operations</p>
+                <h3 class="mt-2 text-xl font-semibold text-slate-900">Maintenance Summary</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-500">Monitor ticket volumes, SLA performance, vendor workload, and closure efficiency.</p>
+              </div>
+              <span class="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">Live</span>
+            </div>
+            <div class="mt-6 grid gap-3 sm:grid-cols-3">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-xs text-slate-500">Open</p><p class="mt-2 text-xl font-semibold text-slate-900">34</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-xs text-slate-500">In Progress</p><p class="mt-2 text-xl font-semibold text-slate-900">19</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-xs text-slate-500">Resolved</p><p class="mt-2 text-xl font-semibold text-slate-900">128</p></div>
+            </div>
+            <div class="mt-6 flex gap-3">
+              <a href="maintenance-dashboard.html" class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white hover:bg-brand-700">View Source</a>
+              <button class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Download</button>
+            </div>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-sm font-medium text-violet-700">Security</p>
+                <h3 class="mt-2 text-xl font-semibold text-slate-900">Visitor Report</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-500">See daily footfall, expected versus actual entries, and desk-level approval insights.</p>
+              </div>
+              <span class="rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold text-violet-700">Today</span>
+            </div>
+            <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 space-y-3 text-sm text-slate-600">
+              <div class="flex items-center justify-between"><span>Expected Visitors</span><span class="font-semibold text-slate-900">26</span></div>
+              <div class="flex items-center justify-between"><span>Checked In</span><span class="font-semibold text-slate-900">18</span></div>
+              <div class="flex items-center justify-between"><span>Pending Approval</span><span class="font-semibold text-amber-700">4</span></div>
+            </div>
+            <div class="mt-6 flex gap-3">
+              <button class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white hover:bg-brand-700">View Report</button>
+              <button class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Download</button>
+            </div>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-sm font-medium text-pink-700">Amenities</p>
+                <h3 class="mt-2 text-xl font-semibold text-slate-900">Booking Utilization</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-500">Analyze usage of gym, clubhouse, meeting rooms, and event spaces by slot and demand.</p>
+              </div>
+              <span class="rounded-full bg-pink-100 px-3 py-1 text-xs font-semibold text-pink-700">Weekly</span>
+            </div>
+            <div class="mt-6 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-xs text-slate-500">Peak Utilization</p><p class="mt-2 text-xl font-semibold text-slate-900">82%</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-xs text-slate-500">Top Facility</p><p class="mt-2 text-xl font-semibold text-slate-900">Clubhouse</p></div>
+            </div>
+            <div class="mt-6 flex gap-3">
+              <button class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white hover:bg-brand-700">View Report</button>
+              <button class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Download</button>
+            </div>
+          </article>
+
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-sm font-medium text-rose-700">Finance</p>
+                <h3 class="mt-2 text-xl font-semibold text-slate-900">Income vs Expense</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-500">Compare inflows and operating outflows to understand margin health across the portfolio.</p>
+              </div>
+              <span class="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700">Quarterly</span>
+            </div>
+            <div class="mt-6 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-xs text-slate-500">Income</p><p class="mt-2 text-xl font-semibold text-slate-900">₹18.4L</p></div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4"><p class="text-xs text-slate-500">Expense</p><p class="mt-2 text-xl font-semibold text-slate-900">₹11.2L</p></div>
+            </div>
+            <div class="mt-6 flex gap-3">
+              <a href="financial-summary.html" class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white hover:bg-brand-700">View Report</a>
+              <button class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Download</button>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
