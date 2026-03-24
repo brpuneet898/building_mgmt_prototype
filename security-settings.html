@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security Settings | Building Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#f0f7ff",
+              100: "#dceeff",
+              200: "#b9ddff",
+              300: "#84c5ff",
+              400: "#4aa5ff",
+              500: "#1d84ff",
+              600: "#0d68db",
+              700: "#0f53ae",
+              800: "#124889",
+              900: "#163d70"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+  <div class="min-h-screen lg:flex">
+    <aside class="hidden lg:flex lg:w-72 xl:w-80 flex-col border-r border-slate-200 bg-slate-950 text-slate-100">
+      <div class="px-6 py-6 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="h-11 w-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-soft">B</div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Prototype</p>
+            <h1 class="text-lg font-semibold">Building Management</h1>
+          </div>
+        </div>
+      </div>
+      <div class="px-6 py-5 border-b border-white/10">
+        <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Signed in as</p>
+        <div class="mt-3 rounded-2xl bg-white/5 p-4 border border-white/10">
+          <p class="font-semibold text-white">Aarav Mehta</p>
+          <p class="text-sm text-slate-400">Admin</p>
+        </div>
+      </div>
+      <nav class="flex-1 px-4 py-6 space-y-1 text-sm">
+        <a href="dashboard-admin.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Dashboard</a>
+        <a href="buildings.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Buildings / Properties</a>
+        <a href="units.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Units</a>
+        <a href="tenants.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Tenants</a>
+        <a href="lease-list.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Leases</a>
+        <a href="maintenance-dashboard.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Maintenance</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Billing & Payments</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Visitors</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Facility Booking</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Communication</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Documents</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Reports</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Users & Roles</a>
+        <a href="security-settings.html" class="flex items-center justify-between rounded-2xl bg-brand-600/20 px-4 py-3 text-white border border-brand-500/30">
+          <span>Settings</span>
+          <span class="text-xs text-brand-200">Active</span>
+        </a>
+      </nav>
+      <div class="p-4 border-t border-white/10">
+        <a href="role-select.html" class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 hover:bg-white/10">Switch Role</a>
+      </div>
+    </aside>
+
+    <div class="flex-1 min-w-0">
+      <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8 xl:px-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="text-sm text-slate-500">Home / Settings / Security</p>
+            <h2 class="text-2xl font-semibold text-slate-900 mt-1">Security Settings</h2>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="general-settings.html" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50">General Settings</a>
+            <a href="payment-billing-settings.html" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50">Billing Settings</a>
+            <button class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700">Save Security Policy</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-7xl px-6 py-8 sm:px-8 xl:px-10 space-y-8">
+        <section class="rounded-3xl border border-slate-200 bg-white p-3 shadow-soft">
+          <div class="flex flex-wrap gap-3">
+            <a href="general-settings.html" class="rounded-2xl px-5 py-3 text-sm font-medium text-slate-600 hover:bg-slate-100">General</a>
+            <a href="payment-billing-settings.html" class="rounded-2xl px-5 py-3 text-sm font-medium text-slate-600 hover:bg-slate-100">Payment / Billing</a>
+            <a href="security-settings.html" class="rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white">Security</a>
+          </div>
+        </section>
+
+        <div class="grid gap-8 xl:grid-cols-3">
+          <div class="xl:col-span-2 space-y-8">
+            <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+              <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p class="text-sm font-medium text-brand-700">Authentication</p>
+                  <h3 class="mt-2 text-xl font-semibold text-slate-900">Two-factor Authentication Toggle Placeholder</h3>
+                  <p class="mt-2 text-sm text-slate-500">Static control for future enforcement of second-step login verification for admins and privileged roles.</p>
+                </div>
+                <div class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4">
+                  <span class="text-sm font-medium text-slate-700">2FA Required</span>
+                  <button class="relative h-7 w-14 rounded-full bg-brand-600">
+                    <span class="absolute right-1 top-1 h-5 w-5 rounded-full bg-white"></span>
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+              <div class="mb-6">
+                <p class="text-sm font-medium text-brand-700">Access Policy</p>
+                <h3 class="mt-2 text-xl font-semibold text-slate-900">Password Policy</h3>
+                <p class="mt-2 text-sm text-slate-500">Reference rules for future authentication hardening and account protection standards.</p>
+              </div>
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <p class="text-sm text-slate-500">Minimum Length</p>
+                  <p class="mt-2 text-2xl font-semibold text-slate-900">10 characters</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <p class="text-sm text-slate-500">Complexity</p>
+                  <p class="mt-2 text-2xl font-semibold text-slate-900">Upper, lower, number</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <p class="text-sm text-slate-500">Password Expiry</p>
+                  <p class="mt-2 text-2xl font-semibold text-slate-900">90 days</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <p class="text-sm text-slate-500">Reuse Prevention</p>
+                  <p class="mt-2 text-2xl font-semibold text-slate-900">Last 5 passwords</p>
+                </div>
+              </div>
+
+              <div class="mt-6 space-y-3">
+                <label class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <input type="checkbox" checked class="mt-1 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500" />
+                  <div>
+                    <p class="font-medium text-slate-900">Force password change on first login</p>
+                    <p class="mt-1 text-sm text-slate-500">Applies to invited users and newly activated accounts.</p>
+                  </div>
+                </label>
+                <label class="flex items-start gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <input type="checkbox" checked class="mt-1 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500" />
+                  <div>
+                    <p class="font-medium text-slate-900">Lock account after failed attempts</p>
+                    <p class="mt-1 text-sm text-slate-500">Temporary lock after 5 failed login attempts.</p>
+                  </div>
+                </label>
+              </div>
+            </section>
+          </div>
+
+          <div class="space-y-8">
+            <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+              <h3 class="text-lg font-semibold text-slate-900">Audit Logs Link</h3>
+              <p class="mt-2 text-sm text-slate-500">Quick entry point for future user action and system event tracking.</p>
+              <a href="#" class="mt-5 inline-flex w-full items-center justify-center rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Open Audit Logs</a>
+              <div class="mt-5 space-y-3 text-sm">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 flex items-center justify-between"><span class="text-slate-500">Last login review</span><span class="font-semibold text-slate-900">Today</span></div>
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 flex items-center justify-between"><span class="text-slate-500">Recent admin actions</span><span class="font-semibold text-slate-900">14 entries</span></div>
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 flex items-center justify-between"><span class="text-slate-500">Export status</span><span class="font-semibold text-slate-900">Placeholder</span></div>
+              </div>
+            </section>
+
+            <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+              <h3 class="text-lg font-semibold text-slate-900">Security Snapshot</h3>
+              <div class="mt-5 space-y-4 text-sm">
+                <div class="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"><span class="text-slate-500">Admin users with 2FA</span><span class="font-semibold text-slate-900">5 / 6</span></div>
+                <div class="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"><span class="text-slate-500">Open security alerts</span><span class="font-semibold text-amber-700">2</span></div>
+                <div class="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3"><span class="text-slate-500">Last policy update</span><span class="font-semibold text-slate-900">18 Mar 2026</span></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
