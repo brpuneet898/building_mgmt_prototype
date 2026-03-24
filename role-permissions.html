@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Role Permissions | Building Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#f0f7ff",
+              100: "#dceeff",
+              200: "#b9ddff",
+              300: "#84c5ff",
+              400: "#4aa5ff",
+              500: "#1d84ff",
+              600: "#0d68db",
+              700: "#0f53ae",
+              800: "#124889",
+              900: "#163d70"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+  <div class="min-h-screen lg:flex">
+    <aside class="hidden lg:flex lg:w-72 xl:w-80 flex-col border-r border-slate-200 bg-slate-950 text-slate-100">
+      <div class="px-6 py-6 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="h-11 w-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold shadow-soft">B</div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Prototype</p>
+            <h1 class="text-lg font-semibold">Building Management</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-6 py-5 border-b border-white/10">
+        <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Signed in as</p>
+        <div class="mt-3 rounded-2xl bg-white/5 p-4 border border-white/10">
+          <p class="font-semibold text-white">Aarav Mehta</p>
+          <p class="text-sm text-slate-400">Admin</p>
+        </div>
+      </div>
+
+      <nav class="flex-1 px-4 py-6 space-y-1 text-sm">
+        <a href="dashboard-admin.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Dashboard</a>
+        <a href="buildings.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Buildings / Properties</a>
+        <a href="units.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Units</a>
+        <a href="tenants.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Tenants</a>
+        <a href="lease-list.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Leases</a>
+        <a href="maintenance-dashboard.html" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Maintenance</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Billing & Payments</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Visitors</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Facility Booking</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Communication</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Documents</a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Reports</a>
+        <a href="users-list.html" class="flex items-center justify-between rounded-2xl bg-brand-600/20 px-4 py-3 text-white border border-brand-500/30">
+          <span>Users & Roles</span>
+          <span class="text-xs text-brand-200">Active</span>
+        </a>
+        <a href="#" class="block rounded-2xl px-4 py-3 text-slate-300 hover:bg-white/5">Settings</a>
+      </nav>
+
+      <div class="p-4 border-t border-white/10">
+        <a href="role-select.html" class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 hover:bg-white/10">Switch Role</a>
+      </div>
+    </aside>
+
+    <div class="flex-1 min-w-0">
+      <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-6 py-4 sm:px-8 xl:px-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="text-sm text-slate-500">Home / Users & Roles / Role Permissions</p>
+            <h2 class="text-2xl font-semibold text-slate-900 mt-1">Role Permissions</h2>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="users-list.html" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Back to Users</a>
+            <a href="#" class="inline-flex items-center justify-center rounded-2xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-700">Export Matrix</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto max-w-7xl px-6 py-8 sm:px-8 xl:px-10 space-y-8">
+        <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft">
+            <p class="text-sm text-slate-500">Modules Covered</p>
+            <p class="mt-3 text-3xl font-semibold text-slate-900">12</p>
+            <p class="mt-2 text-xs text-slate-500">Core prototype navigation modules</p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft">
+            <p class="text-sm text-slate-500">Roles</p>
+            <p class="mt-3 text-3xl font-semibold text-slate-900">4</p>
+            <p class="mt-2 text-xs text-slate-500">Admin, Manager, Staff, Tenant</p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft">
+            <p class="text-sm text-slate-500">Approval Gates</p>
+            <p class="mt-3 text-3xl font-semibold text-slate-900">5</p>
+            <p class="mt-2 text-xs text-amber-600">Restricted to authorized roles</p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-soft">
+            <p class="text-sm text-slate-500">High-Control Modules</p>
+            <p class="mt-3 text-3xl font-semibold text-slate-900">3</p>
+            <p class="mt-2 text-xs text-rose-600">Finance, Reports, Users & Roles</p>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <h3 class="text-lg font-semibold text-slate-900">Permission Matrix Table</h3>
+              <p class="text-sm text-slate-500 mt-1">Module-wise access view showing which roles can view, create, edit, approve, or delete records.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs font-semibold">
+              <span class="rounded-full bg-emerald-100 px-3 py-1 text-emerald-700">Allowed</span>
+              <span class="rounded-full bg-slate-200 px-3 py-1 text-slate-700">Limited</span>
+              <span class="rounded-full bg-rose-100 px-3 py-1 text-rose-700">Restricted</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-slate-200 bg-white shadow-soft overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="min-w-[1200px] w-full divide-y divide-slate-200 text-sm">
+              <thead class="bg-slate-50">
+                <tr class="text-left text-slate-500">
+                  <th class="px-6 py-4 font-medium">Module</th>
+                  <th class="px-6 py-4 font-medium">Admin</th>
+                  <th class="px-6 py-4 font-medium">Manager</th>
+                  <th class="px-6 py-4 font-medium">Staff</th>
+                  <th class="px-6 py-4 font-medium">Tenant</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white align-top">
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Dashboard</td>
+                  <td class="px-6 py-5 text-slate-600">View, create quick actions, edit widgets</td>
+                  <td class="px-6 py-5 text-slate-600">View, create quick actions, edit assigned widgets</td>
+                  <td class="px-6 py-5 text-slate-600">View assigned widgets only</td>
+                  <td class="px-6 py-5 text-slate-600">View personal widgets only</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Buildings / Properties</td>
+                  <td class="px-6 py-5"><div class="space-y-2"><span class="block rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700">View / Create / Edit / Approve / Delete</span></div></td>
+                  <td class="px-6 py-5"><div class="space-y-2"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Edit assigned buildings</span><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">Approve limited operational updates</span></div></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-rose-50 px-3 py-2 text-rose-700">Restricted</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-rose-50 px-3 py-2 text-rose-700">Restricted</span></td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Units</td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700">View / Create / Edit / Approve / Delete</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Edit / Approve assigned units</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View only for assigned operations</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View own unit only</span></td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Tenants</td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700">View / Create / Edit / Approve / Delete</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Create / Edit / Approve</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View limited resident records</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-rose-50 px-3 py-2 text-rose-700">Restricted to own profile summary</span></td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Leases</td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700">View / Create / Edit / Approve / Delete</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Create / Edit / Approve</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-rose-50 px-3 py-2 text-rose-700">Restricted</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View own lease only</span></td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Maintenance</td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700">View / Create / Edit / Approve / Delete</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Create / Edit / Approve</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Edit assigned tickets</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Create own requests</span></td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Billing & Payments</td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700">View / Create / Edit / Approve / Delete</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Create / Edit / Approve</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View collection reminders only</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View own dues / receipts only</span></td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Visitors</td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700">View / Create / Edit / Approve / Delete</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Create / Edit / Approve</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Create / Edit check-in records</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Create own visitor entries</span></td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Facility Booking</td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700">View / Edit / Approve / Delete</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Create / Edit / Approve</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View booking schedule only</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Create own booking requests</span></td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Communication</td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700">View / Create / Edit / Approve / Delete</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Create / Edit / Approve</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View announcements / create incident notes</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View announcements / create feedback</span></td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Documents</td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700">View / Create / Edit / Approve / Delete</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Create / Edit assigned records</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View upload slots for assigned work</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View own documents only</span></td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Reports</td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700">View / Create / Approve / Export</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-slate-100 px-3 py-2 text-slate-700">View / Export assigned operational reports</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-rose-50 px-3 py-2 text-rose-700">Restricted</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-rose-50 px-3 py-2 text-rose-700">Restricted</span></td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-5 font-semibold text-slate-900">Users & Roles</td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700">View / Create / Edit / Approve / Delete</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-rose-50 px-3 py-2 text-rose-700">Restricted</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-rose-50 px-3 py-2 text-rose-700">Restricted</span></td>
+                  <td class="px-6 py-5"><span class="block rounded-xl bg-rose-50 px-3 py-2 text-rose-700">Restricted</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
